@@ -1,3 +1,15 @@
+<?php
+
+if(isset($_POST["valider"])){
+    $email = $_POST["email"];
+    $file = fopen("test.txt", "a");
+    fwrite($file,$email);
+    fclose($file);
+
+}
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +18,10 @@
     <title>Tester si votre email a était piraté</title>
 </head>
 <body>
+    <h1>Tester si votre email a était piraté</h1>
     <table>
         <form action="" method="post">
-        <tr><th>email</th><td><input type="text" name="email" id="email" value=""/></td></tr>
+        <tr><th>email</th><td><input type="text" name="email" id="email" value="" required/></td></tr>
         <tr><td><input type="submit" name="valide" id="valide" value="Tester" /></td></tr>
         </form>
     </table>    
