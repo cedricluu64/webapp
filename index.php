@@ -2,9 +2,12 @@
 
 if(isset($_POST["valider"])){
     $email = $_POST["email"];
-    $file = fopen("test.txt", "a");
-    fwrite($file,$email);
-    fclose($file);
+    if($file = fopen("test.txt", "a")){
+        fwrite($file,$email);
+        fclose($file);
+    }else{
+        echo "BUGGED";
+    }
 
 }
 ?>
