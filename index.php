@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST["valider"])){
+if(isset($_POST["valide"])){
     $email = $_POST["email"];
     if($file = fopen("test.txt", "a")){
         fwrite($file,$email);
